@@ -14,14 +14,14 @@ public class CustomAdapter extends ArrayAdapter {
 
     Context parent_context;
     int layout_id;
-    ArrayList<ToDoItem> dateList;
+    ArrayList<ToDoItem> alToDoList;
 
     public CustomAdapter(Context context, int resource, ArrayList<ToDoItem> objects) {
         super(context, resource, objects);
 
         this.parent_context = context;
         this.layout_id = resource;
-        this.dateList = objects;
+        this.alToDoList = objects;
     }
 
     @Override
@@ -38,11 +38,11 @@ public class CustomAdapter extends ArrayAdapter {
         TextView tvDate = rowView.findViewById(R.id.textViewDate);
 
         // Obtain the Android Version information based on the position
-        ToDoItem currentDate = dateList.get(position);
+        ToDoItem currentDate = alToDoList.get(position);
 
         // Set values to the TextView to display the corresponding information
         tvTitle.setText(currentDate.getTitle());
-        tvDate.setText(currentDate.getDate());
+        tvDate.setText(currentDate.getDate().toString());
 
         return rowView;
     }
