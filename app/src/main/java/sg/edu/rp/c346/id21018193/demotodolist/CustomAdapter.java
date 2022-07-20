@@ -19,9 +19,9 @@ public class CustomAdapter extends ArrayAdapter {
     public CustomAdapter(Context context, int resource, ArrayList<ToDoItem> objects) {
         super(context, resource, objects);
 
-        parent_context = context;
-        layout_id = resource;
-        dateList = objects;
+        this.parent_context = context;
+        this.layout_id = resource;
+        this.dateList = objects;
     }
 
     @Override
@@ -42,7 +42,7 @@ public class CustomAdapter extends ArrayAdapter {
 
         // Set values to the TextView to display the corresponding information
         tvTitle.setText(currentDate.getTitle());
-        tvDate.setText((CharSequence) currentDate.getDate());
+        tvDate.setText(currentDate.getDate());
 
         return rowView;
     }
